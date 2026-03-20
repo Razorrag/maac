@@ -28,11 +28,12 @@ body {
   padding: 0;
   min-height: 100vh;
   overflow-x: hidden;
-  /* Sweeping deep gradient — green-red-dark mix */
+  /* Sweeping deep gradient — green-red-dark-violet mix */
   background: linear-gradient(-45deg,
       #0a0a0a,
       #0d1a0e,
       #1a0808,
+      #0a0514,
       #0a0a0a);
   background-size: 400% 400%;
   animation: fluidGradient 22s ease infinite;
@@ -200,10 +201,21 @@ p {
    Glassmorphism — Over animated gradient bg
    ============================================ */
 .glass {
-  background: rgba(20, 20, 20, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(245, 239, 224, 0.07);
+  background: rgba(20, 20, 20, 0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(245, 239, 224, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 12px;
+}
+
+.glass-contrast {
+  background: rgba(40, 20, 60, 0.3);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.1);
+  border-radius: 12px;
 }
 
 /* ============================================

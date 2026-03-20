@@ -4,25 +4,25 @@ import { useEffect, useRef } from 'react';
 
 const PROPS = [
     {
-        title: 'STUDIO READY',
+        title: 'INDUSTRY GAME CHANGERS',
         desc: 'Train on exactly the same software and pipelines used by leading VFX and Gaming studios globally.',
         stat: '100+',
         statLabel: 'Software Tools',
         color: 'red' as const,
     },
     {
-        title: 'EXPERT MENTORS',
-        desc: 'Learn directly from industry veterans who have worked on Hollywood blockbusters and AAA games.',
+        title: 'EXCLUSIVE EXPOSURE',
+        desc: 'Learn directly from industry veterans through Masterclasses and real-world studio collaboration.',
         stat: '24/7',
         statLabel: 'Support Access',
-        color: 'green' as const,
+        color: 'contrast' as const,
     },
     {
-        title: 'PLACEMENTS',
+        title: 'PLACEMENT SUPPORT',
         desc: "Dedicated Career Development Cell connecting you with India's top media and entertainment recruiters.",
         stat: '30K+',
         statLabel: 'Students Placed',
-        color: 'red' as const,
+        color: 'green' as const,
     }
 ];
 
@@ -52,11 +52,12 @@ export default function ValueProps() {
                 {/* Section Header */}
                 <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-4 reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700">
                     <h2 className="font-display text-5xl md:text-6xl" style={{ color: '#F5EFE0' }}>
-                        WHY <span style={{ color: '#E8281C' }}>MAAC</span><br />
-                        <span style={{ color: '#22C55E' }}>STANDS OUT</span>
+                        CREATIVE CAREERS<br />
+                        <span style={{ color: '#E8281C' }}>THAT CLICK —</span><br />
+                        <span className="text-contrast-light">THINK MAAC</span>
                     </h2>
                     <p className="max-w-sm" style={{ color: '#C9BFA8' }}>
-                        India&apos;s most trusted institute for creative professionals since 1986.
+                        Build your portfolio and secure your future with industry-aligned pedagogy.
                     </p>
                 </div>
 
@@ -65,13 +66,13 @@ export default function ValueProps() {
                     {PROPS.map((p, i) => (
                         <div
                             key={i}
-                            className={`group relative rounded-lg p-8 md:p-10 cursor-default overflow-hidden transition-all duration-500 hover:-translate-y-2 card-dark reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 ${p.color === 'green' ? 'card-dark-green' : ''}`}
+                            className={`group relative rounded-xl p-8 md:p-10 cursor-default overflow-hidden transition-all duration-500 hover:-translate-y-2 glass reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700 ${p.color === 'green' ? 'hover:border-green/40 hover:shadow-[0_8px_32px_rgba(34,197,94,0.15)]' : p.color === 'contrast' ? 'hover:border-contrast/40 hover:shadow-[0_8px_32px_rgba(139,92,246,0.15)]' : 'hover:border-accent/40 hover:shadow-[0_8px_32px_rgba(232,40,28,0.15)]'}`}
                             style={{ transitionDelay: `${(i + 1) * 150}ms` }}
                         >
                             {/* Big Number Background Watermark */}
                             <div
                                 className="absolute top-4 right-6 font-display text-8xl pointer-events-none select-none opacity-5 group-hover:opacity-10 transition-opacity duration-500"
-                                style={{ color: p.color === 'green' ? '#22C55E' : '#E8281C' }}
+                                style={{ color: p.color === 'green' ? '#22C55E' : p.color === 'contrast' ? '#8B5CF6' : '#E8281C' }}
                             >
                                 0{i + 1}
                             </div>
@@ -79,7 +80,7 @@ export default function ValueProps() {
                             {/* Accent line top */}
                             <div
                                 className="w-12 h-1 mb-8 transition-all duration-500 group-hover:w-20"
-                                style={{ background: p.color === 'green' ? '#22C55E' : '#E8281C' }}
+                                style={{ background: p.color === 'green' ? '#22C55E' : p.color === 'contrast' ? '#8B5CF6' : '#E8281C' }}
                             />
 
                             <h3 className="font-display text-2xl mb-4 tracking-wide" style={{ color: '#F5EFE0' }}>
@@ -90,10 +91,10 @@ export default function ValueProps() {
                             </p>
 
                             {/* Stat reveal */}
-                            <div className="flex items-baseline gap-3">
+                            <div className="flex items-baseline gap-3 relative z-10">
                                 <span
                                     className="font-display text-5xl"
-                                    style={{ color: p.color === 'green' ? '#22C55E' : '#E8281C' }}
+                                    style={{ color: p.color === 'green' ? '#22C55E' : p.color === 'contrast' ? '#8B5CF6' : '#E8281C' }}
                                 >
                                     {p.stat}
                                 </span>

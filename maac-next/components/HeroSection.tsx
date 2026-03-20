@@ -16,7 +16,7 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden border-b border-[#2a2a2a] pt-32 pb-24">
+        <section className="relative w-full min-h-screen flex flex-col overflow-hidden border-b border-[#2a2a2a] pt-32 pb-12">
             {/* Background Video */}
             <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
                 <video
@@ -37,65 +37,52 @@ export default function HeroSection() {
                 <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#22C55E] blur-[150px] mix-blend-screen opacity-10 pointer-events-none" />
             </div>
 
-            {/* Main Content */}
             <div
                 ref={textRef}
-                className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-end justify-between gap-8 will-change-transform px-4 md:px-0 opacity-0 translate-y-8 transition-all duration-1000 ease-smooth"
+                className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-end justify-between gap-8 will-change-transform px-4 md:px-12 opacity-0 translate-y-8 transition-all duration-1000 ease-smooth mt-auto"
             >
-                {/* Massive Hero Typography */}
-                <div className="flex-1 w-full">
-                    <div className="text-xs font-bold tracking-widest uppercase mb-6" style={{ color: '#22C55E' }}>
-                        INDIA&apos;S #1 ANIMATION INSTITUTE
-                    </div>
-                    <h1 className="font-display mb-4 leading-[0.9]">
-                        <span
-                            className="block transition-transform duration-700"
-                            style={{
-                                WebkitTextStroke: '2px #F5EFE0',
-                                color: 'transparent',
-                            }}
-                        >
-                            CREATIVE
+                {/* Left: Massive Hero Typography */}
+                <div className="flex flex-col items-start text-left w-full lg:w-[55%]">
+                    <div className="glass-contrast px-4 py-2 rounded-full mb-8 inline-flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-contrast-light animate-pulse" />
+                        <span className="text-xs font-bold tracking-widest text-contrast-light uppercase">
+                            Skill India • NSDC • MESC Training Partner
                         </span>
-                        <span className="block" style={{ color: '#E8281C' }}>
-                            XCELLENCE
+                    </div>
+
+                    <h1 className="font-display mb-6 leading-[0.9] text-[clamp(3.5rem,8vw,6.5rem)]">
+                        <span className="block text-foreground drop-shadow-lg">
+                            POWERED BY
+                        </span>
+                        <span className="block font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light drop-shadow-xl"
+                            style={{ WebkitTextStroke: '1px rgba(232, 40, 28, 0.5)' }}>
+                            PARTNERSHIPS
                         </span>
                     </h1>
-                    <p className="text-lg md:text-xl max-w-md mt-6" style={{ color: '#C9BFA8' }}>
-                        Master Animation, VFX, Gaming &amp; Multimedia at India&apos;s premier creative institute.
-                    </p>
+                    
+                    <h2 className="text-xl md:text-2xl font-body font-light mb-8 text-cream-muted max-w-xl">
+                        Driven by <span className="font-semibold text-cream">You</span>. The New Age of Creative Excellence begins here.
+                    </h2>
 
-                    <div className="flex gap-4 mt-8 flex-wrap">
-                        <button className="btn-primary">
-                            ENROL NOW
-                        </button>
-                        <button className="btn-outline-green">
-                            EXPLORE COURSES
+                    <div className="flex gap-6 mt-4">
+                        <button className="btn-primary px-8 py-4 rounded-md text-lg shadow-[0_0_20px_rgba(232,40,28,0.4)] hover:shadow-[0_0_30px_rgba(232,40,28,0.6)]">
+                            EXPLORE NOW
                         </button>
                     </div>
                 </div>
 
-                {/* Info Widget */}
+                {/* Right: Stats Float */}
                 <div
-                    className="w-full md:w-64 rounded-lg p-6 flex-shrink-0 mb-8 md:mb-0"
-                    style={{
-                        background: 'rgba(20,20,20,0.85)',
-                        border: '1px solid #2a2a2a',
-                        backdropFilter: 'blur(20px)',
-                    }}
+                    className="glass w-full lg:w-80 rounded-xl p-8 flex flex-col gap-6 text-left"
                 >
-                    <div className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: '#22C55E' }}>
-                        QUICK STATS
-                    </div>
                     {[
-                        { label: 'Years of Excellence', val: '38+' },
-                        { label: 'Centres Nationwide', val: '200+' },
-                        { label: 'Alumni Placed', val: '30K+' },
-                    ].map((stat) => (
-                        <div key={stat.label} className="flex justify-between items-center py-3 border-b"
-                            style={{ borderColor: '#2a2a2a' }}>
-                            <span className="text-xs" style={{ color: '#8A7F72' }}>{stat.label}</span>
-                            <span className="font-display text-xl" style={{ color: '#E8281C' }}>{stat.val}</span>
+                        { label: 'Legacy of Excellence', val: '30+ Years' },
+                        { label: 'Industry Pathways', val: 'CareerX' },
+                        { label: 'Placement Support', val: 'Dedicated' },
+                    ].map((stat, i) => (
+                        <div key={stat.label} className={`flex flex-col items-start justify-center pb-5 ${i !== 2 ? 'border-b border-border' : 'pb-0'}`}>
+                            <span className="font-display text-4xl text-green mb-1 drop-shadow-[0_0_10px_rgba(34,197,94,0.3)]">{stat.val}</span>
+                            <span className="text-xs text-muted uppercase tracking-wider">{stat.label}</span>
                         </div>
                     ))}
                 </div>

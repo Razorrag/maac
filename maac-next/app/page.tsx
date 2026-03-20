@@ -7,6 +7,7 @@ import CreativeShowcase from '@/components/CreativeShowcase';
 import PlacementMarquee from '@/components/PlacementMarquee';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import MediaGallery from '@/components/MediaGallery';
+import EnquiryForm from '@/components/EnquiryForm';
 
 export default function Home() {
   return (
@@ -36,6 +37,11 @@ export default function Home() {
       {/* NEW: Media Gallery for user videos/images */}
       <div id="gallery">
         <MediaGallery />
+      </div>
+
+      {/* Modern Glassmorphic Enquiry Form */}
+      <div id="enquiry">
+        <EnquiryForm />
       </div>
 
       {/* Zero JS CSS Infinite Logo Marquee */}

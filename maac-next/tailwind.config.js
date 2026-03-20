@@ -30,6 +30,15 @@ export default {
           glow: 'rgba(34, 197, 94, 0.35)',
         },
 
+        // CONTRAST ACCENT — Deep Violet / Ethereal Blue for subtle background glow
+        contrast: {
+          DEFAULT: '#8B5CF6',     // Violet matching new age vibes
+          light: '#A78BFA',
+          glow: 'rgba(139, 92, 246, 0.35)',
+          blue: '#3B82F6',        // Ethereal Blue
+          blueGlow: 'rgba(59, 130, 246, 0.35)',
+        },
+
         // Crème tones for text hierarchy
         cream: {
           DEFAULT: '#F5EFE0',
