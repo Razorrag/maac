@@ -1,19 +1,18 @@
 import type { Metadata } from 'next';
 import { Anton, Inter } from 'next/font/google';
 import './globals.css';
+import LenisProvider from '@/components/LenisProvider';
 
-// Anton font for headings (DNEG style)
-// display: optional - don't block render for non-critical font
+// Anton font for headings (DNEG/Lando style aggressive typography)
 const anton = Anton({
   weight: '400',
   subsets: ['latin'],
-  display: 'optional',
+  display: 'swap',
   variable: '--font-anton',
-  preload: false,
+  preload: true,
 });
 
 // Inter for body text (clean, readable)
-// display: swap - show fallback immediately, swap when loaded
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -22,15 +21,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'MAAC | Moving Arts Academy California',
-  description: 'Moving Arts Academy California - Excellence in performing arts education',
-  keywords: ['MAAC', 'performing arts', 'dance', 'theatre', 'education', 'California'],
-  authors: [{ name: 'MAAC' }],
+  title: 'MAAC India | Animation, VFX & Gaming Courses',
+  description: 'MAAC (Maya Academy of Advanced Creativity) is India\'s premier training institute for Animation, VFX, Gaming, and Multimedia. Enter the new age of creative excellence.',
+  keywords: ['MAAC', 'Animation', 'VFX', 'Gaming', 'Multimedia', 'India', 'CareerX', 'CreatorX'],
+  authors: [{ name: 'MAAC India' }],
   openGraph: {
-    title: 'MAAC | Moving Arts Academy California',
-    description: 'Excellence in performing arts education',
+    title: 'MAAC India | Excellence in Media & Entertainment',
+    description: 'Premier training institute for Animation, VFX, and Gaming.',
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_IN',
   },
 };
 
@@ -47,8 +46,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${anton.variable} ${inter.variable}`}>
-      <body className="font-body antialiased bg-dneg-white text-dneg-black">
-        {children}
+      <body className="font-body antialiased bg-background text-foreground scroll-smooth">
+        <LenisProvider>
+          {children}
+        </LenisProvider>
       </body>
     </html>
   );

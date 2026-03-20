@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 /* ============================================
-   CSS Reset & Base Styles
+   Root & Reset
    ============================================ */
+:root {
+  color-scheme: dark;
+}
 
 *,
 *::before,
@@ -16,125 +19,272 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  background-color: #0a0a0a;
+  color: #F5EFE0;
 }
 
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  overflow-x: hidden;
+  /* Sweeping deep gradient — green-red-dark mix */
+  background: linear-gradient(-45deg,
+      #0a0a0a,
+      #0d1a0e,
+      #1a0808,
+      #0a0a0a);
+  background-size: 400% 400%;
+  animation: fluidGradient 22s ease infinite;
+  color: #F5EFE0;
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes fluidGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* ============================================
-   CLS Prevention: Reserve space for media
+   Lenis Scroll Fixes
    ============================================ */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
 
-/* Full viewport hero */
-.hero-container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  min-height: -webkit-fill-available;
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
   overflow: hidden;
 }
 
 /* ============================================
-   Video Optimization Styles
+   Typography — Warm Crème Scale
    ============================================ */
-
-/* Remove conflicting global video styles - handled by component */
-
-/* ============================================
-   Typography - Fluid Scaling
-   ============================================ */
-
-/* Fluid typography using clamp() */
-h1 {
+h1,
+h2,
+h3,
+h4,
+.font-display {
   font-family: var(--font-anton);
-  font-size: clamp(2.5rem, 8vw, 6rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #F5EFE0;
+}
+
+h1 {
+  font-size: clamp(3.5rem, 11vw, 8rem);
+  line-height: 0.92;
+  letter-spacing: 0.01em;
   margin: 0;
 }
 
 h2 {
-  font-family: var(--font-anton);
-  font-size: clamp(2rem, 6vw, 4rem);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 2rem);
   margin: 0;
 }
 
 p {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  line-height: 1.6;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  line-height: 1.65;
   margin: 0;
+  color: #C9BFA8;
 }
 
 /* ============================================
-   Micro-interactions & Transitions
+   Safe Height Utility
    ============================================ */
+.min-h-screen-safe {
+  min-height: 100vh;
+  min-height: 100svh;
+}
 
+/* ============================================
+   Card Surfaces — Dark & Warm
+   ============================================ */
+.card-dark {
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  transition: background 0.4s ease, border-color 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-dark:hover {
+  background: #1e1e1e;
+  border-color: rgba(232, 40, 28, 0.35);
+  transform: translateY(-4px);
+}
+
+.card-dark-green:hover {
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+/* ============================================
+   Text Utilities
+   ============================================ */
+.text-outline {
+  -webkit-text-stroke: 2px #F5EFE0;
+  color: transparent;
+}
+
+.text-outline-red {
+  -webkit-text-stroke: 2px #E8281C;
+  color: transparent;
+}
+
+.text-outline-green {
+  -webkit-text-stroke: 2px #22C55E;
+  color: transparent;
+}
+
+/* ============================================
+   Accent Buttons
+   ============================================ */
+.btn-primary {
+  background: #E8281C;
+  color: #F5EFE0;
+  border: none;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-anton);
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+  border-radius: 2px;
+}
+
+.btn-primary:hover {
+  background: #FF4438;
+  transform: translateY(-2px);
+}
+
+.btn-outline-green {
+  border: 1px solid #22C55E;
+  color: #22C55E;
+  background: transparent;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-anton);
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border-radius: 2px;
+}
+
+.btn-outline-green:hover {
+  background: rgba(34, 197, 94, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   Glassmorphism — Over animated gradient bg
+   ============================================ */
+.glass {
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(245, 239, 224, 0.07);
+}
+
+/* ============================================
+   Scrollbar
+   ============================================ */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8281C;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #22C55E;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ============================================
+   Reveal Animation
+   ============================================ */
+.reveal-on-scroll.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ============================================
+   Background Grid Animation
+   ============================================ */
+@keyframes grid-pan {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(4rem);
+  }
+}
+
+.animate-pan-grid {
+  animation: grid-pan 12s linear infinite;
+}
+
+/* ============================================
+   Transitions
+   ============================================ */
 button,
 a {
-  transition: 
-    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.1s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  touch-action: manipulation;
 }
 
 button:active,
 a:active {
-  transform: scale(0.98);
-}
-
-/* Touch target optimization for mobile */
-@media (max-width: 768px) {
-  button,
-  a,
-  [role="button"] {
-    min-height: 44px;
-    min-width: 44px;
-  }
+  transform: scale(0.96);
 }
 
 /* ============================================
-   Utility Classes
+   Reduced Motion
    ============================================ */
-
-/* Glassmorphism effect */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Coral accent gradient */
-.coral-gradient {
-  background: linear-gradient(135deg, #FF6B4A 0%, #E85A3A 100%);
-}
-
-/* Smooth scroll behavior - respect user preferences */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
-/* ============================================
-   Performance: Reduce motion for accessibility
-   ============================================ */
-
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-  
-  html {
-    scroll-behavior: auto;
   }
 }

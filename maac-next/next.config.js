@@ -13,6 +13,9 @@ const nextConfig = {
   // Minimize JavaScript for better INP
   poweredByHeader: false,
 
+  // Empty turbopack config to silence Next.js 16 webpack warnings
+  turbopack: {},
+
   // Webpack optimizations - production only
   webpack: (config, { isServer, dev }) => {
     if (!isServer && !dev) {  // ✅ Only in production

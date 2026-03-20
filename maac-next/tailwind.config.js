@@ -7,38 +7,67 @@ export default {
   ],
   theme: {
     extend: {
-      // DNEG-inspired color palette
+      // GREEN + RED + CRÈME theme — MAAC brand colours
       colors: {
-        // Off-white background (DNEG style)
-        'dneg-white': '#F5F5F3',
-        'dneg-off-white': '#EBEBE8',
-        
-        // Coral accent color
-        'dneg-coral': '#FF6B4A',
-        'dneg-coral-hover': '#E85A3A',
-        
-        // Neutral grays for text
-        'dneg-black': '#1A1A1A',
-        'dneg-gray': '#6B6B6B',
-        'dneg-light-gray': '#9B9B9B',
+        background: '#0a0a0a',    // Rich near-black (not flat #000)
+        foreground: '#F5EFE0',    // Crème white — warm not cold
+
+        // Card surfaces — DARK, not white/transparent
+        surface: '#141414',
+        'surface-hover': '#1e1e1e',
+
+        // PRIMARY ACCENT — Vibrant MAAC Red
+        accent: {
+          DEFAULT: '#E8281C',     // MAAC brand red
+          light: '#FF4438',       // Brighter hover red  
+          glow: 'rgba(232, 40, 28, 0.4)',
+        },
+
+        // SECONDARY ACCENT — Creative Green
+        green: {
+          DEFAULT: '#22C55E',     // Vibrant creative green
+          light: '#4ADE80',
+          glow: 'rgba(34, 197, 94, 0.35)',
+        },
+
+        // Crème tones for text hierarchy
+        cream: {
+          DEFAULT: '#F5EFE0',
+          muted: '#C9BFA8',
+          faint: '#7A6F60',
+        },
+
+        muted: '#8A7F72',
+        border: '#2a2a2a',         // Solid dark border — not transparent
+        'border-light': 'rgba(245, 239, 224, 0.1)',
       },
-      
+
       // Typography
       fontFamily: {
-        // Anton for headings (DNEG style)
         display: ['var(--font-anton)', 'system-ui', 'sans-serif'],
-        // Inter for body text
         body: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
-      
-      // Spacing for touch targets (mobile optimization)
-      spacing: {
-        'touch': '44px', // Minimum touch target size
+
+      animation: {
+        'marquee': 'marquee 25s linear infinite',
+        'marquee-fast': 'marquee 15s linear infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'pan-grid': 'grid-pan 12s linear infinite',
       },
-      
-      // Animation for micro-interactions
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        'grid-pan': {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(4rem)' },
+        }
+      },
+
       transitionTimingFunction: {
-        'dneg': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'smooth': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'snappy': 'cubic-bezier(0.87, 0, 0.13, 1)',
       },
     },
   },
