@@ -3,11 +3,11 @@
 import { useEffect, useRef } from 'react';
 
 const CREATIVE_WORKS = [
-    { title: 'The Last Stand', category: '3D Character Design', image: 'https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=1000&auto=format&fit=crop' },
-    { title: 'Neon Nights', category: 'Environment Modeling', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop' },
-    { title: 'Cybernetic', category: 'VFX Compositing', image: 'https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&w=1000&auto=format&fit=crop' },
-    { title: 'Velocity', category: 'Motion Graphics', image: 'https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1000&auto=format&fit=crop' },
-    { title: 'Apex Predator', category: 'Game Asset', image: 'https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=1000&auto=format&fit=crop' },
+    { title: 'Character & Environment', category: '3D Animation Projects', image: 'https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=1000&auto=format&fit=crop' },
+    { title: 'Compositing & Dynamics', category: 'VFX Work Gallery', image: 'https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&w=1000&auto=format&fit=crop' },
+    { title: 'Next-Gen Worlds', category: 'Game Design Showcase', image: 'https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=1000&auto=format&fit=crop' },
+    { title: 'Digital Artistry', category: 'Digital Art / Multimedia', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop' },
+    { title: 'Motion Packages', category: 'Broadcast Design', image: 'https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1000&auto=format&fit=crop' },
 ];
 
 export default function CreativeShowcase() {
@@ -40,8 +40,8 @@ export default function CreativeShowcase() {
     return (
         <section className="py-32 bg-transparent relative overflow-hidden border-t border-border">
             <div className="max-w-7xl mx-auto px-4 md:px-12 mb-16 relative z-10">
-                <h2 className="text-display text-5xl md:text-7xl mb-4">STUDENT <span className="text-accent">GALLERY</span></h2>
-                <p className="text-muted text-lg max-w-2xl">Award-winning portfolios crafted by MAAC alumni. From blockbuster VFX to Next-Gen game environments.</p>
+                <h2 className="font-display text-5xl md:text-7xl mb-4" style={{ color: '#F5EFE0' }}>STUDENT <span style={{ color: '#22C55E' }}>GALLERY</span></h2>
+                <p className="text-muted text-lg max-w-2xl text-[#C9BFA8]">At MAAC, creativity knows no bounds. Our students push the limits of animation, VFX, game design, and digital artistry. Explore their masterpieces and witness their journey from learners to industry professionals.</p>
             </div>
 
             {/* Horizontal Scrolling Gallery */}

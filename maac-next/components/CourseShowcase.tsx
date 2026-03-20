@@ -2,48 +2,56 @@
 
 import { useEffect, useRef } from 'react';
 
+import Link from 'next/link';
+
 const COURSES = [
     {
-        category: 'VFX',
-        title: 'ADVFX PLUS',
-        desc: 'Advanced Program in Visual Effects. Master the tools used in Hollywood blockbusters.',
-        accent: '#E8281C',
-        duration: '18 Months',
-    },
-    {
         category: '3D ANIMATION',
-        title: 'AD3D EDGE',
-        desc: 'Advanced Program in 3D Animation. Bring characters and cinematic worlds to life.',
-        accent: '#22C55E',
-        duration: '18 Months',
-    },
-    {
-        category: 'GAMING',
-        title: 'ADIDG PLUS',
-        desc: 'Advanced Program in Interactive Design & Games. Craft the next big hit.',
+        title: 'AD3D EDGE PLUS',
+        desc: 'Explore the art and technology behind bringing characters and stories to life. Master Maya, 3ds Max, and Unreal Engine.',
         accent: '#E8281C',
-        duration: '24 Months',
+        duration: 'Career Course',
+        link: '/courses/3d-animation'
     },
     {
-        category: 'DESIGN & WEB',
+        category: 'VISUAL EFFECTS (VFX)',
+        title: 'ADVFX PLUS',
+        desc: 'From raw footage to stunning visuals, learn how VFX artists create environments, explosions, and seamless transitions.',
+        accent: '#22C55E',
+        duration: 'Career Course',
+        link: '/courses/vfx'
+    },
+    {
+        category: 'GAME DESIGN',
+        title: 'ADIDG',
+        desc: 'Design worlds players love to explore. From concept to gameplay, create characters, levels, and immersive worlds.',
+        accent: '#8B5CF6',
+        duration: 'Career Course',
+        link: '/courses/gaming'
+    },
+    {
+        category: 'BROADCAST / MEDIA',
+        title: 'BROADCAST PLUS',
+        desc: 'Learn visual storytelling for TV, OTT, and digital media. Studio-style learning for motion graphics and broadcast packages.',
+        accent: '#E8281C',
+        duration: 'Career Course',
+        link: '/courses/broadcast'
+    },
+    {
+        category: 'MULTIMEDIA & DESIGN',
         title: 'DGWA',
-        desc: 'Graphic Design, Web Design & 2D Animation. Master the art of digital communication.',
+        desc: 'Design that communicates. Learn how graphic designers create logos, branding, and marketing designs.',
         accent: '#22C55E',
-        duration: '12 Months',
+        duration: 'Career Course',
+        link: '/courses/multimedia'
     },
     {
-        category: 'BROADCAST',
-        title: 'PROGRAM IN BROADCAST DESIGN',
-        desc: 'Create captivating motion graphics, promos, and title sequences for television and digital media.',
-        accent: '#E8281C',
-        duration: '15 Months',
-    },
-    {
-        category: 'NEW MEDIA',
-        title: 'AR/VR PRODUCTION',
-        desc: 'Step into the future. Learn to build immersive Augmented and Virtual Reality experiences.',
-        accent: '#22C55E',
-        duration: '9 Months',
+        category: 'FILMMAKING',
+        title: 'DAFM',
+        desc: 'Tell stories that move people. From script to screen, learn how filmmakers plan, shoot, and edit digital content.',
+        accent: '#8B5CF6',
+        duration: 'Career Course',
+        link: '/courses/filmmaking'
     },
 ];
 
@@ -92,61 +100,80 @@ export default function CourseShowcase() {
                     </a>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {COURSES.map((course, i) => (
-                        <div
-                            key={i}
-                            className="group relative rounded-lg p-8 cursor-pointer overflow-hidden reveal-on-scroll opacity-0 translate-y-12 transition-all duration-700"
-                            style={{
-                                background: '#141414',
-                                border: '1px solid #2a2a2a',
-                                transitionDelay: `${i * 80}ms`,
-                                transitionProperty: 'opacity, transform, background, border-color',
-                            }}
-                            onMouseEnter={(e) => {
-                                (e.currentTarget as HTMLElement).style.background = '#1a1a1a';
-                                (e.currentTarget as HTMLElement).style.borderColor = course.accent + '55';
-                                (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)';
-                            }}
-                            onMouseLeave={(e) => {
-                                (e.currentTarget as HTMLElement).style.background = '#141414';
-                                (e.currentTarget as HTMLElement).style.borderColor = '#2a2a2a';
-                                (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-                            }}
-                        >
-                            {/* Left accent bar */}
+                        <Link href={course.link} key={i} className="block group">
                             <div
-                                className="absolute left-0 top-0 bottom-0 w-1 transition-all duration-500 group-hover:w-[3px]"
-                                style={{ background: course.accent }}
-                            />
+                                className="relative rounded-lg p-8 cursor-pointer overflow-hidden reveal-on-scroll opacity-0 translate-y-12 transition-all duration-300 ease-out h-full"
+                                style={{
+                                    background: '#141414',
+                                    border: '1px solid #2a2a2a',
+                                    transitionDelay: `${i * 80}ms`,
+                                    transitionProperty: 'opacity, transform, background, border-color, box-shadow',
+                                    transformStyle: 'preserve-3d',
+                                }}
+                                onMouseMove={(e) => {
+                                    const card = e.currentTarget as HTMLElement;
+                                    const rect = card.getBoundingClientRect();
+                                    const x = e.clientX - rect.left;
+                                    const y = e.clientY - rect.top;
+                                    
+                                    const centerX = rect.width / 2;
+                                    const centerY = rect.height / 2;
+                                    
+                                    const rotateX = ((y - centerY) / centerY) * -8;
+                                    const rotateY = ((x - centerX) / centerX) * 8;
+                                    
+                                    card.style.transitionDelay = '0ms'; // Remove delay during interaction
+                                    card.style.transitionDuration = '100ms';
+                                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                                    card.style.background = '#1a1a1a';
+                                    card.style.borderColor = course.accent + '66';
+                                    card.style.boxShadow = `0 20px 40px -10px ${course.accent}33`;
+                                }}
+                                onMouseLeave={(e) => {
+                                    const card = e.currentTarget as HTMLElement;
+                                    card.style.transitionDuration = '500ms';
+                                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+                                    card.style.background = '#141414';
+                                    card.style.borderColor = '#2a2a2a';
+                                    card.style.boxShadow = 'none';
+                                }}
+                            >
+                                {/* Left accent bar */}
+                                <div
+                                    className="absolute left-0 top-0 bottom-0 w-1 transition-all duration-500 group-hover:w-[3px]"
+                                    style={{ background: course.accent }}
+                                />
 
-                            <div className="flex justify-between items-start mb-6 pl-4">
-                                <span
-                                    className="text-xs font-bold tracking-widest uppercase"
-                                    style={{ color: course.accent }}
-                                >
-                                    {course.category}
-                                </span>
-                                <span
-                                    className="text-xs tracking-widest"
-                                    style={{ color: '#8A7F72' }}
-                                >
-                                    {course.duration}
-                                </span>
-                            </div>
+                                <div className="flex justify-between items-start mb-6 pl-4">
+                                    <span
+                                        className="text-xs font-bold tracking-widest uppercase"
+                                        style={{ color: course.accent }}
+                                    >
+                                        {course.category}
+                                    </span>
+                                    <span
+                                        className="text-xs tracking-widest"
+                                        style={{ color: '#8A7F72' }}
+                                    >
+                                        {course.duration}
+                                    </span>
+                                </div>
 
-                            <div className="pl-4">
-                                <h3
-                                    className="font-display text-3xl mb-3"
-                                    style={{ color: '#F5EFE0' }}
-                                >
-                                    {course.title}
-                                </h3>
-                                <p className="text-sm leading-relaxed" style={{ color: '#8A7F72' }}>
-                                    {course.desc}
-                                </p>
+                                <div className="pl-4">
+                                    <h3
+                                        className="font-display text-2xl mb-3 leading-tight"
+                                        style={{ color: '#F5EFE0' }}
+                                    >
+                                        {course.title}
+                                    </h3>
+                                    <p className="text-sm leading-relaxed" style={{ color: '#8A7F72' }}>
+                                        {course.desc}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

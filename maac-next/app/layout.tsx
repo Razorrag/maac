@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Anton, Inter } from 'next/font/google';
 import './globals.css';
 import LenisProvider from '@/components/LenisProvider';
+import CustomCursor from '@/components/CustomCursor';
 
 // Anton font for headings (DNEG/Lando style aggressive typography)
 const anton = Anton({
@@ -46,7 +47,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${anton.variable} ${inter.variable}`}>
-      <body className="font-body antialiased bg-background text-foreground scroll-smooth">
+      <body className="font-body antialiased bg-background text-foreground scroll-smooth cursor-none selection:bg-[#E8281C] selection:text-white">
+        <CustomCursor />
         <LenisProvider>
           {children}
         </LenisProvider>

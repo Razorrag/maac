@@ -62,6 +62,7 @@ export default {
         'marquee-fast': 'marquee 15s linear infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'pan-grid': 'grid-pan 12s linear infinite',
+        'pan-slow': 'panSlow 20s linear infinite',
       },
       keyframes: {
         marquee: {
@@ -71,6 +72,10 @@ export default {
         'grid-pan': {
           '0%': { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(4rem)' },
+        },
+        panSlow: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         }
       },
 

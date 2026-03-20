@@ -3,11 +3,18 @@ import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import ValueProps from '@/components/ValueProps';
 import CourseShowcase from '@/components/CourseShowcase';
+import SoftwareShowcase from '@/components/SoftwareShowcase';
+import EventsSection from '@/components/EventsSection';
 import CreativeShowcase from '@/components/CreativeShowcase';
+import MediaGallery from '@/components/MediaGallery';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import BlogSection from '@/components/BlogSection';
+import FaqSection from '@/components/FaqSection';
+import EnquiryForm from '@/components/EnquiryForm';
+import LocatorCTA from '@/components/LocatorCTA';
 import PlacementMarquee from '@/components/PlacementMarquee';
 import AnimatedBackground from '@/components/AnimatedBackground';
-import MediaGallery from '@/components/MediaGallery';
-import EnquiryForm from '@/components/EnquiryForm';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -29,14 +36,39 @@ export default function Home() {
         <CourseShowcase />
       </div>
 
+      {/* NEW: Software Tools Taught at MAAC */}
+      <div id="software">
+        <SoftwareShowcase />
+      </div>
+
+      {/* NEW: Events at MAAC Bento Grid */}
+      <div id="events">
+        <EventsSection />
+      </div>
+
       {/* New Creative Showcase for Student Work */}
       <div id="student-world">
         <CreativeShowcase />
       </div>
 
-      {/* NEW: Media Gallery for user videos/images */}
+      {/* Media Gallery for user videos/images */}
       <div id="gallery">
         <MediaGallery />
+      </div>
+
+      {/* NEW: Student Success Testimonials */}
+      <div id="testimonials">
+        <TestimonialsSection />
+      </div>
+
+      {/* NEW: Latest Blog Posts and News */}
+      <div id="blogs">
+        <BlogSection />
+      </div>
+
+      {/* NEW: Frequently Asked Questions */}
+      <div id="faqs">
+        <FaqSection />
       </div>
 
       {/* Modern Glassmorphic Enquiry Form */}
@@ -44,21 +76,16 @@ export default function Home() {
         <EnquiryForm />
       </div>
 
+      {/* NEW: Find Your Nearest Centre CTA */}
+      <div id="locate">
+        <LocatorCTA />
+      </div>
+
       {/* Zero JS CSS Infinite Logo Marquee */}
       <PlacementMarquee />
 
-      {/* Footer Area */}
-      <footer className="py-12 px-4 md:px-12 border-t" style={{ borderColor: '#2a2a2a', background: '#0a0a0a' }}>
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="font-display text-2xl tracking-widest" style={{ color: '#F5EFE0' }}>
-            MAAC<span style={{ color: '#E8281C' }}>X</span>
-          </div>
-          <div className="text-sm font-body text-center md:text-right" style={{ color: '#8A7F72' }}>
-            © {new Date().getFullYear()} Maya Academy of Advanced Creativity.
-            <br className="md:hidden" /> India&apos;s Premier Creative Institute.
-          </div>
-        </div>
-      </footer>
+      {/* Comprehensive Footer Area */}
+      <Footer />
     </main>
   );
 }

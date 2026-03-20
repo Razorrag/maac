@@ -1,9 +1,9 @@
 'use client';
 
 const PARTNERS = [
-    'DNEG', 'Framestore', 'Prime Focus', 'Reliance Entertainment',
-    'Yash Raj Films', 'Tata Elxi', 'EA Games', 'Animagic',
-    'DQ Entertainment', 'UTV Motion', 'Pixion', 'The Mill',
+    'MPC', 'Prime Focus World', 'DNEG', 'Amazon', 'Redchillies VFX',
+    'Accenture', 'DQ Entertainment', 'Green Gold Animation', 'Technicolor',
+    'NDTV', 'IBN7', 'NY VFXwaala', 'Cosmos Maya', 'Ubisoft', 'Pixar', 'Netflix'
 ];
 
 export default function PlacementMarquee() {
