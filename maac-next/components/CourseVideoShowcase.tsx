@@ -485,7 +485,6 @@ function MobileShowcase() {
               playsInline
               preload="auto"
               className="w-full h-full object-cover"
-              loading="lazy"
             />
 
             {/* Gradient Overlay */}
