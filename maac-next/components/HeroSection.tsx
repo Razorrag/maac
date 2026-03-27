@@ -30,8 +30,10 @@ export default function HeroSection() {
                     loop
                     muted
                     playsInline
+                    preload="auto"
                     className="w-full h-full object-cover"
                 >
+                    <source src="/videos/intro.webm" type="video/webm" />
                     <source src="/videos/intro.mp4" type="video/mp4" />
                 </video>
 
