@@ -146,7 +146,6 @@ function VideoLayer({ course, opacity, isActive }: VideoLayerProps) {
         playsInline
         preload="auto"
         className="w-full h-full object-cover"
-        loading="lazy"
       />
       {/* Gradient overlay for text readability */}
       <div
