@@ -330,3 +330,269 @@ a:active {
 .animate-marquee {
   animation: marquee 30s linear infinite;
 }
+
+/* ============================================
+   Affiliated Courses & Partners Marquee Animations
+   ============================================ */
+
+/* Row 1: Left to Right marquee */
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Row 2: Right to Left marquee */
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-right {
+  animation: marquee-right 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-left {
+  animation: marquee-left 40s linear infinite;
+  will-change: transform;
+}
+
+/* Pause marquee on hover for better UX */
+.animate-marquee-right:hover,
+.animate-marquee-left:hover {
+  animation-play-state: paused;
+}
+
+/* Reduced motion support for marquee */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-right,
+  .animate-marquee-left {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* ============================================
+   WhyMAAC Component Animations
+   ============================================ */
+
+/* Smooth parallax container */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Clip-path reveal animation */
+@keyframes clipReveal {
+  0% { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+.animate-clip-reveal {
+  animation: clipReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Image scale reveal */
+@keyframes scaleReveal {
+  0% { transform: scale(1.1); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-scale-reveal {
+  animation: scaleReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Gradient pulse */
+@keyframes gradientPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.5; }
+}
+.animate-gradient-pulse {
+  animation: gradientPulse 3s ease-in-out infinite;
+}
+
+/* Slow pan for background elements */
+@keyframes panSlow {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+.animate-pan-slow {
+  animation: panSlow 60s linear infinite;
+}
+
+/* Magnetic button effect helper */
+.magnetic-hover {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.magnetic-hover:active {
+  transform: scale(0.95);
+}
+
+/* GPU-accelerated transforms for smooth animations */
+.gpu-accelerated {
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* Contain layout for isolated sections */
+.contain-strict {
+  contain: layout style paint;
+}
+
+/* Smooth image loading transition */
+.image-loaded {
+  transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Horizontal scroll snap for mobile gallery */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-snap-center {
+  scroll-snap-align: center;
+}
+
+/* Sticky section helper */
+.sticky-section {
+  position: sticky;
+  top: 0;
+}
+
+/* Film grain overlay */
+.film-grain {
+  position: relative;
+}
+.film-grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 10;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-clip-reveal,
+  .animate-scale-reveal,
+  .animate-gradient-pulse,
+  .animate-pan-slow,
+  .animate-marquee {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .gpu-accelerated {
+    will-change: auto;
+  }
+}
+
+/* ============================================
+   Course Video Showcase - Scrollytelling Section
+   ============================================ */
+
+/* Sticky section helper for video showcase */
+.video-showcase-sticky {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .video-showcase-sticky .sticky-viewport {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+  }
+}
+
+/* Video layer transitions */
+.video-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  will-change: opacity;
+}
+
+.video-layer video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Glassmorphism enhancement for video overlay */
+.glass-video-overlay {
+  background: rgba(20, 20, 20, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(245, 239, 224, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 16px;
+}
+
+/* Progress bar segments */
+.progress-segment {
+  width: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #2a2a2a;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.progress-segment-active {
+  background: #E8281C;
+}
+
+/* Mobile horizontal scroll snap */
+.scroll-snap-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.scroll-snap-carousel > * {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+}
+
+/* Hide scrollbar for clean look */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Video autoplay fix for mobile */
+video[autoplay][muted] {
+  pointer-events: none;
+}
+
+/* Reduced motion for video showcase */
+@media (prefers-reduced-motion: reduce) {
+  .video-layer {
+    transition: none !important;
+  }
+  
+  .glass-video-overlay {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+/* ============================================
+   Header Offset for Fixed Positioning
+   ============================================ */
+:root {
+  --header-offset: 80px; /* Adjust based on your navigation height */
+}

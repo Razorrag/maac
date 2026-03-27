@@ -3,11 +3,12 @@
 import { useEffect, useRef } from 'react';
 
 const CREATIVE_WORKS = [
-    { title: 'Character & Environment', category: '3D Animation Projects', image: 'https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=1000&auto=format&fit=crop' },
-    { title: 'Compositing & Dynamics', category: 'VFX Work Gallery', image: 'https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&w=1000&auto=format&fit=crop' },
-    { title: 'Next-Gen Worlds', category: 'Game Design Showcase', image: 'https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=1000&auto=format&fit=crop' },
-    { title: 'Digital Artistry', category: 'Digital Art / Multimedia', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop' },
-    { title: 'Motion Packages', category: 'Broadcast Design', image: 'https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1000&auto=format&fit=crop' },
+    { title: 'The Final Guardian', category: '3D Animation Award Winner (MCL)', student: 'Rohan K. (MAAC Andheri)', image: 'https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=1000&auto=format&fit=crop' },
+    { title: 'Neon Genesis Cityscape', category: 'Environment Matte Painting', student: 'Priya M. (MAAC Pitampura)', image: 'https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?q=80&w=1000&auto=format&fit=crop' },
+    { title: 'Cyberpunk Chase', category: 'Unreal Engine 5 Real-time', student: 'Team Alpha (MAAC South Ext.)', image: 'https://images.unsplash.com/photo-1621252179027-94459d278660?q=80&w=1000&auto=format&fit=crop' },
+    { title: 'The Last Stand', category: '100 Hours Marathon Winner', student: 'MAAC Pune Team', image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop' },
+    { title: 'Brand Identity: VAYU', category: 'Multimedia & Design', student: 'Anjali D. (MAAC Jayanagar)', image: 'https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1000&auto=format&fit=crop' },
+    { title: 'Invisible Effects Reel', category: 'Advanced VFX Compositing', student: 'Siddharth R. (MAAC Chowringhee)', image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1000&auto=format&fit=crop' },
 ];
 
 export default function CreativeShowcase() {
@@ -65,17 +66,20 @@ export default function CreativeShowcase() {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
 
                             {/* Content Reveal */}
-                            <div className="absolute bottom-0 left-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <span className="text-accent text-sm font-bold tracking-widest uppercase mb-2 block opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            <div className="absolute bottom-0 left-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 w-full">
+                                <span className="text-[#E8281C] text-xs font-bold tracking-widest uppercase mb-2 block opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                                     {work.category}
                                 </span>
-                                <h3 className="font-display text-3xl text-foreground uppercase">
+                                <h3 className="font-display text-2xl lg:text-3xl text-foreground uppercase truncate" style={{ color: '#F5EFE0' }}>
                                     {work.title}
                                 </h3>
+                                <div className="mt-2 text-sm tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200" style={{ color: '#C9BFA8' }}>
+                                    By {work.student}
+                                </div>
                             </div>
 
                             {/* Hover Border Glow */}
-                            <div className="absolute inset-0 border-2 border-transparent group-hover:border-accent/50 rounded-xl transition-colors duration-500" />
+                            <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#22C55E]/40 rounded-xl transition-colors duration-500" />
                         </div>
                     ))}
                 </div>

@@ -5,19 +5,34 @@ import ScrollReveal from './ScrollReveal';
 
 const TESTIMONIALS = [
     {
-        name: 'VFX Artist',
+        name: 'Chander',
+        company: 'MAAC Pitampura (MCL Winner)',
+        text: '"It is an honour to have been featured this year at MCL amongst the sea of exceptionally talented professionals. I urge all aspiring students to not be afraid to fail and keep trying new things."'
+    },
+    {
+        name: 'VFX Alumni',
         company: 'Technicolour Bangalore',
         text: '"I am currently working as 3D Digital Matte Painting Artist. When I joined MAAC for an Advanced VFX course, I got to learn lots of things which are required to work in the VFX industry."'
     },
     {
         name: '3D Artist',
         company: 'IPE Global Ltd.',
-        text: '"MAAC has really helped me a lot to reach this position. The faculty at MAAC helped me during the course to work on projects and build a strong portfolio."'
+        text: '"MAAC has really helped me a lot to reach this position. The faculty at MAAC has also helped me a lot during the course to work on projects and build a strong portfolio."'
+    },
+    {
+        name: 'Creative Professional',
+        company: 'Alumni',
+        text: '"Joining MAAC was a life changing decision. MAAC launched me into this wonderful career that I cherish everyday. The training was the perfect balance between aesthetics & technical knowledge."'
     },
     {
         name: 'Animation Graduate',
         company: 'Alumni',
-        text: '"Joining MAAC was a life changing decision for me. The training I received was the perfect balance between aesthetics & technical knowledge."'
+        text: '"I am proud of my decision of choosing MAAC to pursue my animation studies. Very knowledgeable faculty always assist you... and you get lots of opportunities to showcase your skills."'
+    },
+    {
+        name: 'VFX Aspirant',
+        company: 'Alumni',
+        text: '"MAAC really gives us wings... let\'s fly! I am learning from the best to deliver the best. I am sure to achieve my goal of becoming the best VFX artist from this institution."'
     }
 ];
 

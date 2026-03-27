@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="80" fill="#ffffff" rx="8"/>
+  <circle cx="45" cy="40" r="18" fill="#5B3C96"/>
+  <text x="45" y="46" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">PW</text>
+  <text x="110" y="45" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a1a1a" text-anchor="middle">PHYSICS</text>
+  <text x="110" y="62" font-family="Arial, sans-serif" font-size="14" fill="#5B3C96" text-anchor="middle">WALLAH</text>
+</svg>

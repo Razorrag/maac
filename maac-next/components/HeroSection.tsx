@@ -7,16 +7,22 @@ export default function HeroSection() {
 
     useEffect(() => {
         // Simple fade in on mount
-        if (textRef.current) {
-            setTimeout(() => {
-                textRef.current!.style.opacity = '1';
-                textRef.current!.style.transform = 'translateY(0)';
-            }, 100);
-        }
+        const timeoutId = setTimeout(() => {
+            // ✅ FIX: Check ref existence inside the timeout callback
+            // Use a local variable to prevent race conditions
+            const element = textRef.current;
+            if (element) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        }, 100);
+
+        // ✅ FIX: Cleanup timeout on unmount to prevent memory leaks
+        return () => clearTimeout(timeoutId);
     }, []);
 
     return (
-        <section className="relative w-full min-h-screen flex flex-col overflow-hidden border-b border-[#2a2a2a] pt-32 pb-12">
+        <section className="relative w-full h-screen flex flex-col overflow-hidden border-b border-[#2a2a2a] pt-32 pb-12">
             {/* Background Video */}
             <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
                 <video
@@ -32,9 +38,11 @@ export default function HeroSection() {
                 {/* Softer overlay just for text readability - mostly at bottom */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
 
-                {/* Subtle cinematic glow over the video without blowing out colors */}
+                {/* Subtle cinematic glow over the video without blowing out colors - NO PURPLE */}
                 <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-[#E8281C] blur-[150px] mix-blend-screen opacity-20 pointer-events-none" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#22C55E] blur-[150px] mix-blend-screen opacity-10 pointer-events-none" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#22C55E] blur-[150px] mix-blend-screen opacity-15 pointer-events-none" />
+                {/* Additional white/cream glow for warmth */}
+                <div className="absolute top-[20%] right-[10%] w-[40vw] h-[40vw] rounded-full bg-[#F5EFE0] blur-[120px] mix-blend-soft-light opacity-8 pointer-events-none" />
             </div>
 
             <div

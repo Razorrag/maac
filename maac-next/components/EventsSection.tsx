@@ -5,45 +5,45 @@ import ScrollReveal from './ScrollReveal';
 
 const EVENTS = [
     {
-        title: 'MAAC Creative League (MCL)',
-        desc: 'A competitive ecosystem to nurture skills across 10 competition categories.',
+        title: '24FPS INTERNATIONAL AWARDS',
+        desc: 'World\'s most celebrated animation awards by MAAC, recognizing global talent in Animation, VFX, and Gaming since 2003.',
         colSpan: 'md:col-span-2',
-        color: 'red',
+        color: 'contrast',
         bg: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1000&auto=format&fit=crop'
     },
     {
-        title: '100 Hours Creative Marathon',
-        desc: 'Push your limits! Collaborate and create a 3D short film or mobile film in just 100 hours.',
+        title: 'MAAC CREATIVE LEAGUE (MCL)',
+        desc: 'A competitive ecosystem to nurture skills across 10 competition categories like 3D asset creation and matte painting.',
         colSpan: 'md:col-span-1',
-        color: 'contrast',
+        color: 'red',
         bg: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1000&auto=format&fit=crop'
     },
     {
-        title: 'MAAC Manifest',
-        desc: 'Honoring our students and alumni for outstanding contributions to the VFX industry.',
+        title: '100 HOURS CREATIVE MARATHON',
+        desc: 'The ultimate endurance test! Collaborate and create a 3D short film or mobile film in exactly 100 hours.',
         colSpan: 'md:col-span-1',
-        color: 'green',
+        color: 'red',
         bg: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1000&auto=format&fit=crop'
     },
     {
-        title: 'Workshops & Masterclasses',
-        desc: 'Meet like-minded artists and learn directly from industry professionals globally.',
+        title: 'MAAC MANIFEST',
+        desc: 'Honoring our alumni for their outstanding contributions and credits in blockbuster Hollywood and Bollywood films.',
         colSpan: 'md:col-span-2',
-        color: 'red',
+        color: 'green',
         bg: 'https://images.unsplash.com/photo-1475721025505-1190f2b2c9ad?q=80&w=1000&auto=format&fit=crop'
     },
     {
-        title: 'Photo Walks & Travel',
-        desc: 'Step outside the classroom and capture breathtaking moments in stunning locations.',
-        colSpan: 'md:col-span-1',
-        color: 'green',
+        title: 'NATIONAL LEVEL WORKSHOPS',
+        desc: 'Meet like-minded artists and learn directly from top industry professionals and studio veterans.',
+        colSpan: 'md:col-span-2',
+        color: 'contrast',
         bg: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1000&auto=format&fit=crop'
     },
     {
-        title: 'Industry Webinars',
-        desc: 'Gain exclusive insights from industry legends and working alumni.',
-        colSpan: 'md:col-span-2',
-        color: 'contrast',
+        title: 'EXPERT WEBINARS',
+        desc: 'Gain exclusive insights from global industry legends and working MAAC alumni.',
+        colSpan: 'md:col-span-1',
+        color: 'green',
         bg: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?q=80&w=1000&auto=format&fit=crop'
     }
 ];
@@ -55,12 +55,12 @@ export default function EventsSection() {
             
             <div className="max-w-7xl mx-auto relative z-10">
                 <ScrollReveal type="slide" direction="up" delay={0}>
-                    <div className="mb-16 text-center">
+                    <div className="mb-16">
                         <h2 className="font-display text-5xl md:text-6xl mb-4" style={{ color: '#F5EFE0' }}>
                             EVENTS AT <span style={{ color: '#E8281C' }}>MAAC</span>
                         </h2>
-                        <p className="text-lg md:text-xl max-w-2xl mx-auto" style={{ color: '#C9BFA8' }}>
-                            Creative Workshops, Webinars &amp; Animation Showcases
+                        <p className="text-lg md:text-xl max-w-2xl" style={{ color: '#C9BFA8' }}>
+                            Industry-leading flagship events designed to push creative boundaries and showcase talent on a global stage.
                         </p>
                     </div>
                 </ScrollReveal>

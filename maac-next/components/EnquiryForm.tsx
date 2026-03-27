@@ -34,33 +34,37 @@ export default function EnquiryForm() {
                         </div>
                         <div className="flex flex-col gap-2">
                             <label className="text-xs tracking-widest uppercase text-muted">Interested Course</label>
-                            <select className="bg-surface/50 border border-border p-3 rounded text-foreground focus:border-contrast-light focus:outline-none focus:ring-1 focus:ring-contrast-light transition-all appearance-none cursor-pointer">
-                                <option value="" disabled defaultValue="">Select a Course</option>
-                                <option value="3d">3D Animation</option>
-                                <option value="vfx">Visual Effects (VFX)</option>
-                                <option value="gaming">Game Design</option>
-                                <option value="multimedia">Multimedia & Design</option>
-                                <option value="broadcast">Broadcast</option>
+                            <select defaultValue="" className="bg-surface/50 border border-border p-3 rounded text-foreground focus:border-contrast-light focus:outline-none focus:ring-1 focus:ring-contrast-light transition-all appearance-none cursor-pointer">
+                                <option value="" disabled className="text-black">Select a Course</option>
+                                <option value="3d_animation" className="text-black">3D Animation</option>
+                                <option value="vfx" className="text-black">Visual Effects (VFX)</option>
+                                <option value="game_design" className="text-black">Game Design</option>
+                                <option value="broadcast" className="text-black">Broadcast & Media</option>
+                                <option value="multimedia" className="text-black">Multimedia & Digital Design</option>
+                                <option value="filmmaking" className="text-black">Filmmaking</option>
                             </select>
                         </div>
                         <div className="flex flex-col gap-2">
                             <label className="text-xs tracking-widest uppercase text-muted">State</label>
-                            <select className="bg-surface/50 border border-border p-3 rounded text-foreground focus:border-contrast-light focus:outline-none focus:ring-1 focus:ring-contrast-light transition-all appearance-none cursor-pointer">
-                                <option value="" disabled defaultValue="">Select State</option>
-                                <option value="mh">Maharashtra</option>
-                                <option value="dl">Delhi</option>
-                                <option value="ka">Karnataka</option>
-                                <option value="tn">Tamil Nadu</option>
+                            <select defaultValue="" className="bg-surface/50 border border-border p-3 rounded text-foreground focus:border-contrast-light focus:outline-none focus:ring-1 focus:ring-contrast-light transition-all appearance-none cursor-pointer">
+                                <option value="" disabled className="text-black">Select State</option>
+                                <option value="mh" className="text-black">Maharashtra</option>
+                                <option value="dl" className="text-black">Delhi</option>
+                                <option value="ka" className="text-black">Karnataka</option>
+                                <option value="tn" className="text-black">Tamil Nadu</option>
+                                <option value="ts" className="text-black">Telangana</option>
                             </select>
                         </div>
                         <div className="flex flex-col gap-2">
                             <label className="text-xs tracking-widest uppercase text-muted">City</label>
-                            <select className="bg-surface/50 border border-border p-3 rounded text-foreground focus:border-contrast-light focus:outline-none focus:ring-1 focus:ring-contrast-light transition-all appearance-none cursor-pointer">
-                                <option value="" disabled defaultValue="">Select City</option>
-                                <option value="mumbai">Mumbai</option>
-                                <option value="pune">Pune</option>
-                                <option value="delhi">New Delhi</option>
-                                <option value="bangalore">Bangalore</option>
+                            <select defaultValue="" className="bg-surface/50 border border-border p-3 rounded text-foreground focus:border-contrast-light focus:outline-none focus:ring-1 focus:ring-contrast-light transition-all appearance-none cursor-pointer">
+                                <option value="" disabled className="text-black">Select City</option>
+                                <option value="mumbai" className="text-black">Mumbai</option>
+                                <option value="pune" className="text-black">Pune</option>
+                                <option value="delhi" className="text-black">New Delhi</option>
+                                <option value="bangalore" className="text-black">Bangalore</option>
+                                <option value="hyderabad" className="text-black">Hyderabad</option>
+                                <option value="chennai" className="text-black">Chennai</option>
                             </select>
                         </div>
                         <div className="md:col-span-2 mt-4 text-center">

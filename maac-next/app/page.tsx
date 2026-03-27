@@ -1,8 +1,13 @@
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
+import WhyMAAC from '@/components/WhyMAAC';
+import CreativeCareers from '@/components/CreativeCareers';
 import AboutSection from '@/components/AboutSection';
 import ValueProps from '@/components/ValueProps';
 import CourseShowcase from '@/components/CourseShowcase';
+import CareerXCreatorX from '@/components/CareerXCreatorX';
+import AffiliatedCoursesPartners from '@/components/AffiliatedCoursesPartners';
+import CourseVideoShowcase from '@/components/CourseVideoShowcase';
 import SoftwareShowcase from '@/components/SoftwareShowcase';
 import EventsSection from '@/components/EventsSection';
 import CreativeShowcase from '@/components/CreativeShowcase';
@@ -18,12 +23,31 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen text-foreground overflow-hidden relative">
+    <main className="min-h-screen text-foreground relative">
       <AnimatedBackground />
       <Navigation transparent />
 
       {/* High Performance Parallax Hero */}
       <HeroSection />
+
+      {/* NEW: Why MAAC - Creative Careers Section (placed right after hero) */}
+      <WhyMAAC />
+
+      {/* Creative Careers - Moved below WhyMAAC */}
+      <CreativeCareers />
+
+      {/* NEW: Silver Jubilee Academic Pathways - MOVED HERE (after CreativeCareers) */}
+      <div id="careerx-creatorx">
+        <CareerXCreatorX />
+      </div>
+
+      {/* NEW: Affiliated Courses & Industry Knowledge Partners */}
+      <AffiliatedCoursesPartners />
+
+      {/* NEW: Full-Screen Video Showcase - Immersive Course Experience */}
+      <div id="course-showcase" className="relative border-t border-b border-[#2a2a2a]">
+        <CourseVideoShowcase />
+      </div>
 
       {/* Corporate Overview */}
       <AboutSection />

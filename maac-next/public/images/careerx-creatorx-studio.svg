@@ -1,0 +1,45 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <rect width="1200" height="800" fill="#0A0A0A"/>
+  
+  <!-- Abstract studio environment -->
+  <rect x="100" y="200" width="1000" height="500" fill="#1a0808" opacity="0.3"/>
+  <rect x="150" y="250" width="400" height="300" fill="#0d1a0e" opacity="0.4"/>
+  <rect x="600" y="280" width="450" height="280" fill="#1a1a1a" opacity="0.5"/>
+  
+  <!-- X-Frame decorative elements -->
+  <path d="M 100 200 L 200 200 L 200 250 L 150 250 L 150 300 L 100 300 Z" fill="#E8281C" opacity="0.6"/>
+  <path d="M 1100 200 L 1000 200 L 1000 250 L 1050 250 L 1050 300 L 1100 300 Z" fill="#22C55E" opacity="0.6"/>
+  <path d="M 100 700 L 200 700 L 200 650 L 150 650 L 150 600 L 100 600 Z" fill="#22C55E" opacity="0.6"/>
+  <path d="M 1100 700 L 1000 700 L 1000 650 L 1050 650 L 1050 600 L 1100 600 Z" fill="#E8281C" opacity="0.6"/>
+  
+  <!-- Abstract student silhouettes -->
+  <ellipse cx="400" cy="550" rx="80" ry="120" fill="#2a2a2a" opacity="0.5"/>
+  <ellipse cx="700" cy="540" rx="75" ry="115" fill="#2a2a2a" opacity="0.5"/>
+  <ellipse cx="900" cy="560" rx="70" ry="110" fill="#2a2a2a" opacity="0.5"/>
+  
+  <!-- Equipment abstract shapes -->
+  <rect x="300" y="400" width="150" height="100" fill="#3a3a3a" opacity="0.4" rx="10"/>
+  <rect x="750" y="380" width="180" height="120" fill="#3a3a3a" opacity="0.4" rx="10"/>
+  
+  <!-- Lighting effects -->
+  <circle cx="300" cy="150" r="60" fill="#E8281C" opacity="0.3" filter="blur(40px)"/>
+  <circle cx="900" cy="180" r="70" fill="#22C55E" opacity="0.3" filter="blur(50px)"/>
+  <circle cx="600" cy="120" r="80" fill="#F5EFE0" opacity="0.2" filter="blur(60px)"/>
+  
+  <!-- Floor reflection -->
+  <rect x="0" y="650" width="1200" height="150" fill="url(#floorGradient)" opacity="0.3"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="floorGradient" x1="0" y1="650" x2="0" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1a1a1a"/>
+      <stop offset="1" stop-color="#0A0A0A"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Text placeholder -->
+  <text x="600" y="400" font-family="system-ui" font-size="24" fill="#C9BFA8" text-anchor="middle" opacity="0.5">
+    Studio Environment
+  </text>
+</svg>
